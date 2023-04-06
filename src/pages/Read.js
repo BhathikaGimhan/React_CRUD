@@ -2,6 +2,7 @@ import { collection, getDocs } from "firebase/firestore";
 import Connection from "../firebase/Connection";
 import React, { useState, useEffect } from "react";
 import Create from "./Create";
+import Edit from "./Edit";
 
 function Read() {
   const [cities, setCities] = useState([]);
@@ -27,6 +28,9 @@ function Read() {
   const onCityAdded = () => {
     fetchCities();
   };
+  const onEdit = (city) => {
+    console.log(city);
+  };
 
   return (
     <div>
@@ -36,17 +40,19 @@ function Read() {
           <th>City</th>
           <th>Country</th>
           <th>State</th>
+          <th>Edit</th>
         </thead>
         <tbody>
           {cities.map((city) => (
-            <tr key={city.id}>
+            <tr key={city.cities}>
               <td>{city.name}</td>
               <td>{city.state}</td>
               <td>{city.country}</td>
+              <td><Edit city={city} onEdit={onEdit}/></td>
             </tr>
           ))}
         </tbody>
-      </table>
+      </table>Edit
     </div>
   );
 }
