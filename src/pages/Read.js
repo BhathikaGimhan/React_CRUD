@@ -3,6 +3,7 @@ import Connection from "../firebase/Connection";
 import React, { useState, useEffect, useRef } from "react";
 import Create from "./Create";
 import Edit from "./Edit";
+import EditForm from "./EditForm";
 
 function Read() {
   const [cities, setCities] = useState([]);
@@ -40,8 +41,10 @@ function Read() {
   return (
     <div >
       <Create onCityAdded={onCityAdded} />
+      <EditForm></EditForm>
       <div className="readComponent">
         <div className="tableComponent" ref={tableBodyRef}>
+
           <table className="table">
             <thead>
               <th>City</th>
