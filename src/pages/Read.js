@@ -41,7 +41,7 @@ function Read() {
   return (
     <div >
       <Create onCityAdded={onCityAdded} />
-      <EditForm></EditForm>
+      <EditForm />
       <div className="readComponent">
         <div className="tableComponent" ref={tableBodyRef}>
 

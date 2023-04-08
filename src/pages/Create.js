@@ -3,7 +3,7 @@ import { doc, setDoc } from "firebase/firestore";
 import Connection from "../firebase/Connection";
 import Cancel from "./Cancel";
 
-function Create({citys,onEdit, onCityAdded }) {
+function Create({onCityAdded }) {
   const [city, setCity] = useState({
     id: "",
     name: "",
