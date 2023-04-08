@@ -40,7 +40,7 @@ function Create({onCityAdded }) {
   };
 
   return (
-    <div className="from">
+    <div className="formw">
       <form onSubmit={handleSubmit}>
         <label htmlFor="id">id :</label>
         <input type="text" id="id" name="id" value={city.id} onChange={handleInputChange} />

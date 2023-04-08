@@ -37,14 +37,38 @@ function Read() {
     // Scroll to the bottom of the table body whenever new data is added
     tableBodyRef.current.scrollTop = tableBodyRef.current.scrollHeight;
   }, [cities]);
+  const [showEdit, setShow] = useState(true);
+  const show = ()=>{
+    setShow(!showEdit);
+  }
+
+  const style = {
+    hideStyle: {display: "none"},
+    showStyle: {display: "block"},
+  };
+  const styles = {
+    hide: { display: 'none' },
+    show: { display: 'block' }
+  };
+  
 
   return (
-    <div >
-      <Create onCityAdded={onCityAdded} />
-      <EditForm />
+    <div>
+    <EditForm city={cities} style={showEdit ? styles.hide : styles.show} />
+
+      {showEdit ? (
+        <>
+          <EditForm city={cities} style={style.showStyle} />
+        </>
+      ) : (
+        <>
+        <Create onCityAdded={onCityAdded} />
+          
+        </>
+      )}
+
       <div className="readComponent">
         <div className="tableComponent" ref={tableBodyRef}>
-
           <table className="table">
             <thead>
               <th>City</th>
@@ -58,7 +82,7 @@ function Read() {
                   <td>{city.name}</td>
                   <td>{city.state}</td>
                   <td>{city.country}</td>
-                  <td><Edit city={city} onEdit={onEdit}/></td>
+                  <td><Edit city={city} show={show} onEdit={onEdit}/></td>
                 </tr>
               ))}
             </tbody>

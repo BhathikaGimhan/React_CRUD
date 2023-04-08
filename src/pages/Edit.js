@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Edit({ citys, city, onEdit }) {
+function Edit({show, city }) {
     const handleEdit = (event) => {
         
         const name = document.getElementById("Edit-name");
@@ -11,8 +11,7 @@ function Edit({ citys, city, onEdit }) {
         state.value = city.state;
         country.value = city.country;
         id.value = city.id;
-        onEdit(city);
-        onEdit(citys);
+        show();
       };
 
 
