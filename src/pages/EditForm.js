@@ -6,13 +6,13 @@ function EditForm() {
     <div className="from">
       <form>
         <label htmlFor="id">id :</label>
-        <input type="text" id="id" name="id" />
+        <input type="text" id="Editid" name="id" />
         <label htmlFor="name">Name :</label>
-        <input type="text" id="name" name="name" />
+        <input type="text" id="Edit-name" name="name" />
         <label htmlFor="state">State :</label>
-        <input type="text" id="state" name="state" />
+        <input type="text" id="Edit-state" name="state" />
         <label htmlFor="country">Country :</label>
-        <input type="text" id="country" name="country" />
+        <input type="text" id="Edit-country" name="country" />
         <button className="createBtn" type="submit">Add City</button>
       </form>
       <Cancel/>

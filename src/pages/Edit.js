@@ -3,10 +3,10 @@ import React from 'react'
 function Edit({ citys, city, onEdit }) {
     const handleEdit = (event) => {
         
-        const name = document.getElementById("name");
-        const state = document.getElementById("state");
-        const country = document.getElementById("country");
-        const id = document.getElementById("id");
+        const name = document.getElementById("Edit-name");
+        const state = document.getElementById("Edit-state");
+        const country = document.getElementById("Edit-country");
+        const id = document.getElementById("Editid");
         name.value = city.name;
         state.value = city.state;
         country.value = city.country;
