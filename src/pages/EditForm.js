@@ -4,7 +4,7 @@ import { doc, setDoc } from 'firebase/firestore';
 import Connection from '../firebase/Connection';
 
 
-function EditForm({ show, city, onEdit, onCancel }) {
+function EditForm({ city, onEdit, onCancel }) {
   const [cityData, setCityData] = useState(city);
   const handleInputChange = (event) => {
     const { name, value } = event.target;
