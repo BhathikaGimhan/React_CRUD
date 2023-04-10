@@ -39,7 +39,7 @@ function Read() {
   }, [cities]);
   const [showEdit, setShow] = useState(true);
   const show = ()=>{
-    setShow(!showEdit);
+    setShow(false);
   }
 
   const style = {
@@ -56,7 +56,7 @@ function Read() {
     <div>
     <EditForm city={cities} style={showEdit ? styles.hide : styles.show} />
 
-      {showEdit ? (
+      {!showEdit ? (
         <>
           <EditForm city={cities} style={style.showStyle} />
         </>
